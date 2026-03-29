@@ -9,15 +9,11 @@ TOKEN = os.environ.get('DISCORD_BOT_TOKEN')
 if not TOKEN:
     raise ValueError("Falta la variable de entorno DISCORD_BOT_TOKEN")
 
-# IDs cargados desde variables de entorno
 CANAL_PERMITIDO_ID = int(os.environ.get('CANAL_PERMITIDO_ID', '0'))
 CANAL_STATUS_ID    = int(os.environ.get('CANAL_STATUS_ID', '0'))
 CANAL_INFO_ID      = os.environ.get('CANAL_INFO_ID', '0')
 ARCHIVO_DB = os.path.join(os.path.dirname(__file__), 'tickets.db')
 
-# Configuración de roles de staff por servidor
-# Servidor 1: rol identificado por nombre
-# Servidor 2: rol identificado por ID
 SERVER_CONFIG = {
     int(os.environ.get('CANAL_PERMITIDO_ID', '0')): {
         'rol_nombre': os.environ.get('ROL_STAFF_S1_NOMBRE', 'Director Junior'),
